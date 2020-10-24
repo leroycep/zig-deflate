@@ -75,3 +75,32 @@ test "decode using fixed huffman codelengths" {
     const symbol = (try fixed_code.decode_next_symbol(&bit_reader)).?;
     std.log.warn("\n{x}\n{b}\n{c}\n", .{symbol, symbol, @intCast(u8, symbol)});
 }
+
+const HELLO_WORLD_ZLIB_COMPRESSED : []u8 = []u8{
+    78,
+    01,
+    f3,
+    48,
+    cd,
+    c9,
+    c9,
+    d7,
+    51,
+    08,
+    cf,
+    2f,
+    ca,
+    49,
+    51,
+    e4,
+    02,
+    00,
+    24,
+    12,
+    04,
+    74,
+};
+
+test "decompressing zlib compression"" {
+
+}
